@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alsheikh Sajji & BBQ - Lahore's premier sajji restaurant. Fire-kissed chicken and mutton sajji, seekh kabab, and BBQ. Open daily 6 PM - 2 AM at Sabzazar, Multan Road.">
+    <title>Alsheikh Sajji & BBQ - Fire-Kissed Sajji in Lahore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-charcoal: #0C0906;
+            --ember: #FF7A1A;
+            --amber: #FFB347;
+            --cream: #F6EFE3;
+            --smoke: #8B8378;
+        }
+
+        html {
+            background: var(--bg-charcoal);
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--bg-charcoal);
+            color: var(--cream);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .display {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            transition: backdrop-filter 0.3s ease, background 0.3s ease;
+        }
+
+        nav.scrolled {
+            backdrop-filter: blur(12px);
+            background: rgba(12, 9, 6, 0.8);
+        }
+
+        .wordmark {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.05em;
+            color: var(--cream);
+        }
+
+        .nav-phone {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid var(--smoke);
+            color: var(--cream);
+            text-decoration: none;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-phone:hover {
+            border-color: var(--ember);
+            background: rgba(255, 122, 26, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.15);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(12, 9, 6, 0.4), rgba(12, 9, 6, 0.7));
+            z-index: 2;
+        }
+
+        #ember-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        .eyebrow {
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-headline {
+            margin-bottom: 1.5rem;
+        }
+
+        .headline-line {
+            overflow: hidden;
+            display: block;
+        }
+
+        .headline-line span {
+            display: inline-block;
+            clip-path: inset(100% 0 0 0);
+        }
+
+        .hero-headline h1 {
+            font-size: clamp(3rem, 12vw, 8rem);
+            margin: 0;
+            line-height: 0.95;
+        }
+
+        .hero-subline {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--smoke);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .cta-primary {
+            padding: 1.25rem 2.5rem;
+            background: var(--ember);
+            color: var(--bg-charcoal);
+            text-decoration: none;
+            border-radius: 3rem;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            background: var(--amber);
+            transform: translateY(-2px);
+        }
+
+        .cta-secondary {
+            padding: 1.25rem 2.5rem;
+            background: transparent;
+            color: var(--cream);
+            text-decoration: none;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid var(--cream);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(246, 239, 227, 0.1);
+        }
+
+        .rating-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(246, 239, 227, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--cream);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--smoke);
+            z-index: 10;
+        }
+
+        /* Marquee */
+        .marquee {
+            background: var(--ember);
+            padding: 2rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-text {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--bg-charcoal);
+            letter-spacing: 0.05em;
+            display: inline;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Story Section */
+        .story {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .section-heading span {
+            display: inline-block;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .story-content p {
+            font-size: 1.125rem;
+            color: var(--smoke);
+            line-height: 1.8;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--ember);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--smoke);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Fire to Feast Section */
+        .fire-feast {
+            position: relative;
+            height: 100vh;
+        }
+
+        .fire-feast-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .fire-feast-bg img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+        }
+
+        .fire-feast-bg img:first-child {
+            opacity: 1;
+        }
+
+        .fire-feast-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 9, 6, 0.85);
+            z-index: 2;
+        }
+
+        .fire-feast-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+            text-align: center;
+        }
+
+        .process-heading {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--amber);
+        }
+
+        .step-number {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            color: var(--ember);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .step-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .step-description {
+            font-size: 1.25rem;
+            color: var(--smoke);
+            max-width: 600px;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 3rem;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: rgba(246, 239, 227, 0.2);
+            z-index: 10;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--ember);
+            width: 0%;
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .menu-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: rgba(246, 239, 227, 0.05);
+            border: 1px solid rgba(246, 239, 227, 0.1);
+            clip-path: inset(100% 0 0 0);
+        }
+
+        .menu-card-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .menu-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-card-number {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-family: 'Fraunces', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--ember);
+            opacity: 0.3;
+        }
+
+        .menu-card-content {
+            padding: 2rem;
+        }
+
+        .menu-card-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-card-price {
+            font-size: 1rem;
+            color: var(--ember);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .menu-card-description {
+            font-size: 0.95rem;
+            color: var(--smoke);
+            line-height: 1.6;
+        }
+
+        .menu-card-typographic {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 122, 26, 0.1), rgba(12, 9, 6, 0.5));
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .review-card {
+            padding: 2.5rem;
+            background: rgba(246, 239, 227, 0.05);
+            border-radius: 1rem;
+            border: 1px solid rgba(246, 239, 227, 0.1);
+        }
+
+        .stars {
+            color: var(--amber);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .review-author {
+            font-size: 0.9rem;
+            color: var(--smoke);
+            font-weight: 600;
+        }
+
+        /* Visit Section */
+        .visit {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .visit-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 4rem;
+        }
+
+        .visit-info h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--ember);
+        }
+
+        .visit-info p {
+            font-size: 1.1rem;
+            color: var(--smoke);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .visit-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .visit-ctas a {
+            padding: 1.25rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3rem;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-whatsapp {
+            background: var(--ember);
+            color: var(--bg-charcoal);
+        }
+
+        .cta-whatsapp:hover {
+            background: var(--amber);
+        }
+
+        .cta-directions {
+            background: transparent;
+            color: var(--cream);
+            border: 1px solid var(--cream);
+        }
+
+        .cta-directions:hover {
+            background: rgba(246, 239, 227, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5%;
+            border-top: 1px solid rgba(246, 239, 227, 0.1);
+            text-align: center;
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-info {
+            font-size: 0.9rem;
+            color: var(--smoke);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--smoke);
+            margin-top: 2rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .wordmark {
+                font-size: 1rem;
+            }
+
+            .nav-phone {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 0 1.5rem;
+            }
+
+            .story-content,
+            .visit-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .menu-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="wordmark">ALSHEIKH</div>
+        <a href="tel:+923298000099" class="nav-phone">Call Now</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="hero-bg">
+            <img src="hero-sajji.jpg" alt="Fire-kissed sajji roasted over coals" id="hero-img">
+        </div>
+        <div class="hero-overlay" id="hero-overlay"></div>
+        <canvas id="ember-canvas"></canvas>
+        <div class="hero-content">
+            <div class="eyebrow">Sabzazar · Multan Road · Lahore</div>
+            <div class="hero-headline display">
+                <h1>
+                    <span class="headline-line"><span id="line1">Fire-Kissed Sajji.</span></span>
+                    <span class="headline-line"><span id="line2">Lahore Loves.</span></span>
+                </h1>
+            </div>
+            <p class="hero-subline">Whole sajji slow-roasted over coals the traditional way</p>
+            <div class="hero-ctas">
+                <a href="https://wa.me/923298000099" class="cta-primary">Order on WhatsApp</a>
+                <a href="#menu" class="cta-secondary">See the Menu</a>
+            </div>
+            <div class="rating-chip">
+                <span>★</span>
+                <span>Rated by 313 Google reviews</span>
+            </div>
+        </div>
+        <div class="scroll-hint" id="scroll-hint">Scroll to explore</div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-content">
+            <span class="marquee-text">SAJJI • BBQ • SEEKH KABAB • MALAI BOTI • TIKKA • SAJJI • BBQ • SEEKH KABAB • MALAI BOTI • TIKKA • </span>
+            <span class="marquee-text">SAJJI • BBQ • SEEKH KABAB • MALAI BOTI • TIKKA • SAJJI • BBQ • SEEKH KABAB • MALAI BOTI • TIKKA • </span>
+        </div>
+    </div>
+
+    <!-- Story Section -->
+    <section class="story">
+        <h2 class="section-heading display"><span>A Sabzazar institution</span></h2>
+        <div class="story-content">
+            <p>
+                At Alsheikh, we practice the ancient Balochi craft of sajji — whole birds marinated in secret spices, skewered, and slow-roasted around open coals until the skin crisps and the meat falls from the bone. This isn't fast food. This is tradition, fire, and time.
+            </p>
+            <p>
+                Open every evening from 6 PM to 2 AM, we serve only what's been prepared fresh that night. The coals are lit, the flames lick the air, and Lahoris gather for what many call the best sajji in the city. Come hungry. Come late. Come often.
+            </p>
+        </div>
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-number" data-count="313">0</div>
+                <div class="stat-label">Google Reviews</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">Top <span data-count="10">0</span></div>
+                <div class="stat-label">Sajji in Lahore</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">Rs <span data-count="550">0</span></div>
+                <div class="stat-label">Sajji Starting Price</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fire to Feast Section -->
+    <section class="fire-feast" id="fire-feast">
+        <div class="fire-feast-bg" id="fire-feast-bg">
+            <img src="grill-kababs.jpg" alt="Grilling kababs" data-step="1">
+            <img src="hero-sajji.jpg" alt="Sajji on coals" data-step="2">
+            <img src="platter.jpg" alt="BBQ platter" data-step="3">
+        </div>
+        <div class="fire-feast-overlay"></div>
+        <div class="fire-feast-content">
+            <div class="process-heading display">From Fire to Feast</div>
+            <div class="step-number" id="step-number">01</div>
+            <h3 class="step-title display" id="step-title">Marinate</h3>
+            <p class="step-description" id="step-description">Secret spices rubbed into every bird, hours before the flame</p>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <h2 class="section-heading display"><span>Signature Menu</span></h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-card-image">
+                    <img src="hero-sajji.jpg" alt="Chicken Sajji" loading="lazy">
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Chicken Sajji</h3>
+                    <div class="menu-card-price">From Rs 550</div>
+                    <p class="menu-card-description">Whole bird marinated and roasted on an open flame until golden and tender</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-typographic">
+                    <div class="menu-card-number">02</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Mutton Sajji</h3>
+                    <div class="menu-card-price">Market Price</div>
+                    <p class="menu-card-description">Fall-off-the-bone mutton slow-roasted over coals with aromatic spices</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image">
+                    <img src="grill-kababs.jpg" alt="Seekh Kabab" loading="lazy">
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Seekh Kabab</h3>
+                    <div class="menu-card-price">Chicken & Beef</div>
+                    <p class="menu-card-description">Hand-minced meat on skewers, charred to perfection over live coals</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-typographic">
+                    <div class="menu-card-number">04</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Chicken Malai Boti</h3>
+                    <div class="menu-card-price">Premium</div>
+                    <p class="menu-card-description">Creamy marinated chicken pieces grilled until smoky and succulent</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-typographic">
+                    <div class="menu-card-number">05</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Chicken Tikka</h3>
+                    <div class="menu-card-price">Classic</div>
+                    <p class="menu-card-description">Boldly spiced chicken tikka with the char and bite Lahore demands</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image">
+                    <img src="platter.jpg" alt="BBQ Platter" loading="lazy">
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">BBQ Platter</h3>
+                    <div class="menu-card-price">Serves 3-4</div>
+                    <p class="menu-card-description">The full experience — sajji, kababs, tikka, malai boti, and more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <h2 class="section-heading display"><span>What Lahore says</span></h2>
+        <p style="color: var(--smoke); font-size: 1.1rem; margin-top: -2rem; margin-bottom: 2rem;">313 Google reviews</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Best sajji I've had in Lahore. The meat is so tender it falls off the bone, and the late-night vibe is unbeatable. Worth every rupee."</p>
+                <div class="review-author">— Ahmed R.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Authentic Balochi sajji done right. The coal-roasted flavor is incredible. Been coming here for years and it never disappoints."</p>
+                <div class="review-author">— Bilal K.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"If you haven't tried Alsheikh's sajji, you're missing out. Generous portions, amazing taste, and the seekh kababs are fire too."</p>
+                <div class="review-author">— Usman T.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Section -->
+    <section class="visit">
+        <h2 class="section-heading display"><span>Visit or Order</span></h2>
+        <div class="visit-content">
+            <div class="visit-info">
+                <h3>Location</h3>
+                <p>Shah Fareed Chowk, Sabzazar Scheme<br>Multan Road, Lahore</p>
+
+                <h3>Hours</h3>
+                <p>Open daily<br>6:00 PM – 2:00 AM</p>
+
+                <h3>Contact</h3>
+                <p>Phone / WhatsApp<br>+92 329 8000099</p>
+            </div>
+            <div class="visit-ctas">
+                <a href="https://wa.me/923298000099" class="cta-whatsapp">Order on WhatsApp</a>
+                <a href="tel:+923298000099" class="cta-whatsapp" style="background: var(--amber);">Call Now</a>
+                <a href="https://www.google.com/maps/search/Alsheikh+Sajji+Sabzazar+Multan+Road+Lahore" target="_blank" class="cta-directions">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-name">Alsheikh Sajji & BBQ</div>
+        <div class="footer-info">Shah Fareed Chowk, Sabzazar Scheme, Multan Road, Lahore</div>
+        <div class="footer-info">+92 329 8000099</div>
+        <div class="footer-note">Demo website</div>
+    </footer>
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script>
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Initialize only if GSAP loaded
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeof Lenis !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Initialize Lenis smooth scroll
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true
+            });
+
+            // Wire Lenis with GSAP ScrollTrigger
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+
+            // Scroll hint fade
+            gsap.to('#scroll-hint', {
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: '#hero',
+                    start: 'top top',
+                    end: '+=200',
+                    scrub: true
+                }
+            });
+
+            if (!prefersReducedMotion) {
+                // Hero pinned scrub sequence
+                const heroTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '#hero',
+                        start: 'top top',
+                        end: '+=150%',
+                        scrub: 1,
+                        pin: true
+                    }
+                });
+
+                heroTl
+                    .to('#hero-img', { scale: 1, ease: 'none' }, 0)
+                    .to('#hero-overlay', { background: 'linear-gradient(to bottom, rgba(12, 9, 6, 0.6), rgba(12, 9, 6, 0.85))', ease: 'none' }, 0)
+                    .to('#line1', { clipPath: 'inset(0 0 0 0)', ease: 'power2.out' }, 0.2)
+                    .to('#line2', { clipPath: 'inset(0 0 0 0)', ease: 'power2.out' }, 0.4);
+
+                // Fire to Feast pinned sequence
+                const steps = [
+                    { number: '01', title: 'Marinate', description: 'Secret spices rubbed into every bird, hours before the flame', imageIndex: 0 },
+                    { number: '02', title: 'Skewer', description: 'Each piece threaded carefully, ready for the coals', imageIndex: 0 },
+                    { number: '03', title: 'Slow-Roast over Coals', description: 'Hours beside the fire, turning until golden and smoky', imageIndex: 1 },
+                    { number: '04', title: 'Served Sizzling', description: 'Straight from flame to table, still crackling with heat', imageIndex: 2 }
+                ];
+
+                const fireFeastTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '#fire-feast',
+                        start: 'top top',
+                        end: '+=300%',
+                        scrub: 1,
+                        pin: true
+                    }
+                });
+
+                const images = document.querySelectorAll('#fire-feast-bg img');
+
+                steps.forEach((step, i) => {
+                    const progress = i / (steps.length - 1);
+
+                    fireFeastTl
+                        .to('#step-number', {
+                            opacity: 0,
+                            y: -20,
+                            duration: 0.1
+                        }, progress)
+                        .to('#step-title', {
+                            opacity: 0,
+                            y: -20,
+                            duration: 0.1
+                        }, progress)
+                        .to('#step-description', {
+                            opacity: 0,
+                            y: -20,
+                            duration: 0.1
+                        }, progress)
+                        .set('#step-number', { textContent: step.number })
+                        .set('#step-title', { textContent: step.title })
+                        .set('#step-description', { textContent: step.description })
+                        .to('#step-number', {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.2
+                        }, progress + 0.1)
+                        .to('#step-title', {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.2
+                        }, progress + 0.1)
+                        .to('#step-description', {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.2
+                        }, progress + 0.1);
+
+                    // Crossfade images
+                    if (i > 0 && step.imageIndex !== steps[i-1].imageIndex) {
+                        fireFeastTl.to(images[steps[i-1].imageIndex], { opacity: 0, duration: 0.3 }, progress);
+                        fireFeastTl.to(images[step.imageIndex], { opacity: 1, duration: 0.3 }, progress);
+                    }
+                });
+
+                // Progress bar
+                fireFeastTl.to('#progress-fill', { width: '100%', ease: 'none' }, 0);
+
+                // Menu card reveals
+                gsap.utils.toArray('.menu-card').forEach((card, i) => {
+                    gsap.to(card, {
+                        clipPath: 'inset(0 0 0 0)',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 80%',
+                            end: 'top 50%',
+                            scrub: 1
+                        }
+                    });
+
+                    // Parallax images inside cards
+                    const img = card.querySelector('.menu-card-image img');
+                    if (img) {
+                        gsap.to(img, {
+                            yPercent: 20,
+                            scrollTrigger: {
+                                trigger: card,
+                                start: 'top bottom',
+                                end: 'bottom top',
+                                scrub: true
+                            }
+                        });
+                    }
+                });
+
+                // Section heading reveals
+                gsap.utils.toArray('.section-heading span').forEach(span => {
+                    gsap.from(span, {
+                        yPercent: 100,
+                        opacity: 0,
+                        scrollTrigger: {
+                            trigger: span,
+                            start: 'top 85%',
+                            end: 'top 65%',
+                            scrub: 1
+                        }
+                    });
+                });
+
+                // Stats counter
+                const animateCounter = (element) => {
+                    const target = parseInt(element.dataset.count);
+                    gsap.to(element, {
+                        textContent: target,
+                        duration: 2,
+                        snap: { textContent: 1 },
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 80%',
+                            once: true
+                        }
+                    });
+                };
+
+                document.querySelectorAll('[data-count]').forEach(animateCounter);
+            } else {
+                // Reduced motion: show everything statically
+                document.getElementById('line1').style.clipPath = 'inset(0 0 0 0)';
+                document.getElementById('line2').style.clipPath = 'inset(0 0 0 0)';
+                document.getElementById('hero-img').style.transform = 'scale(1)';
+                document.querySelectorAll('.menu-card').forEach(card => {
+                    card.style.clipPath = 'inset(0 0 0 0)';
+                });
+                document.querySelectorAll('[data-count]').forEach(el => {
+                    el.textContent = el.dataset.count;
+                });
+            }
+
+            // Nav scroll effect
+            let lastScroll = 0;
+            lenis.on('scroll', ({ scroll }) => {
+                const nav = document.getElementById('nav');
+                if (scroll > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+        } else {
+            // Fallback if CDNs fail
+            console.warn('GSAP, ScrollTrigger, or Lenis failed to load. Animations disabled.');
+            document.getElementById('line1').style.clipPath = 'inset(0 0 0 0)';
+            document.getElementById('line2').style.clipPath = 'inset(0 0 0 0)';
+            document.getElementById('hero-img').style.transform = 'scale(1)';
+            document.querySelectorAll('.menu-card').forEach(card => {
+                card.style.clipPath = 'inset(0 0 0 0)';
+            });
+            document.querySelectorAll('[data-count]').forEach(el => {
+                el.textContent = el.dataset.count;
+            });
+        }
+
+        // Ember particles canvas
+        const canvas = document.getElementById('ember-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationId;
+        let isVisible = true;
+
+        const resizeCanvas = () => {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        };
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Ember {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + 10;
+                this.size = Math.random() * 3 + 1;
+                this.speedY = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.3;
+                this.flicker = Math.random() * 0.3;
+            }
+
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                this.opacity += (Math.random() - 0.5) * this.flicker;
+                this.opacity = Math.max(0, Math.min(this.opacity, 0.8));
+
+                if (this.y < -10 || this.x < -10 || this.x > canvas.width + 10) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+                gradient.addColorStop(0, `rgba(255, 179, 71, ${this.opacity})`);
+                gradient.addColorStop(0.5, `rgba(255, 122, 26, ${this.opacity * 0.6})`);
+                gradient.addColorStop(1, `rgba(255, 122, 26, 0)`);
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Initialize particles
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Ember());
+            particles[i].y = Math.random() * canvas.height;
+        }
+
+        const animate = () => {
+            if (!isVisible) return;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            animationId = requestAnimationFrame(animate);
+        };
+
+        // Intersection observer to pause when offscreen
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible && !prefersReducedMotion) {
+                    animate();
+                } else {
+                    cancelAnimationFrame(animationId);
+                }
+            });
+        });
+        observer.observe(canvas);
+
+        if (!prefersReducedMotion) {
+            animate();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target && typeof lenis !== 'undefined') {
+                    lenis.scrollTo(target, { offset: -80 });
+                } else if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
