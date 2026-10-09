@@ -502,7 +502,7 @@
                     Object.values(overlays).forEach(overlay => {
                         if (progress >= overlay.start && progress <= overlay.end) {
                             const localProgress = (progress - overlay.start) / (overlay.end - overlay.start);
-                            const fadeIn = Math.min(localProgress * 3, 1);
+                            const fadeIn = overlay.start === 0 ? 1 : Math.min(localProgress * 3, 1);
                             const fadeOut = overlay.end === 1.00 ? 1 : Math.max(1 - (localProgress - 0.7) * 3, 0);
                             const opacity = Math.min(fadeIn, fadeOut);
                             overlay.el.style.opacity = opacity;
